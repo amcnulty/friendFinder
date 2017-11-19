@@ -2,8 +2,21 @@ html, body {
     margin: 0px;
     padding: 0px;
     font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-h1 {
-    color: green;
+#content {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#content p {
+    font-size: 1.3em;
+    line-height: 1.3em;
+}
+
+#surveyLink {
+    font-weight: bolder;
+    text-decoration: none;
 }

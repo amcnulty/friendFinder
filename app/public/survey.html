@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Survey || Friend Finder</title>
+    <title>Survey | Friend Finder</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,7 +10,64 @@
     <link rel="stylesheet" type="text/css" href="css/survey.css">
 </head>
 <body>
-    <h1>Friend Finder Home</h1>
+    <div id="content">
+        <h1>Friend Finder Survey Questions</h1>
+        <form>
+            <h2>About Me</h2>
+            <label for="name">Name *</label>
+            <br>
+            <input id="name" type="text" placeholder="Full Name">
+            <br>
+            <label for="picture">My Picture - URL link to a picture of you (Picture must contain your face)</label>
+            <br>
+            <input id="picture" type="text" placeholder="http://">
+            <h2>Compatibility Survey</h2>
+            <label for="q1">
+                It's important that my friends enjoy the same music as me.
+            </label>
+            <br>
+            <select name="q1" id="q1">
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+        </form>
+
+    </div>
+    <ol>
+        <li>
+            It's important that my friends enjoy the same music as me.
+        </li>
+        <li>
+            I would rather spend my days off with friends rather than being alone.
+        </li>
+        <li>
+            It's important for me to have a lot of friends.
+        </li>
+        <li>
+            It's more important for me to trust my friends than to have fun going out with them.
+        </li>
+        <li>
+            I need to have deap intellectual conversations with my close friends.
+        </li>
+        <li>
+            I frequently throw parties and invite all of my friends.
+        </li>
+        <li>
+            I tell my friends everything that is going on in my life.
+        </li>
+        <li>
+            I know my friend's family very well and they know my family very well.
+        </li>
+        <li>
+            I sometimes talk poorly about my friends behind their backs.
+        </li>
+        <li>
+            I am often late to social events that I am invited to.
+        </li>
+    </ol>
     <script type="text/javascript" src="js/survey.js"></script>
 </body>
 </html>
