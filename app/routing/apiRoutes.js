@@ -8,6 +8,8 @@ router.get('/friends', function(req, res) {
 
 router.post('/friends', function(req, res) {
     console.log("Handling POST request from api/friends");
+    console.log(req.body);
+    res.status(200).send();
 });
 
 module.exports = router;
