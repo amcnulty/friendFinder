@@ -7,13 +7,11 @@ function load() {
     }
     
     function sendFormData() {
-        // console.log(formData);
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "/api/friends", true);
         xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
         xhr.onreadystatechange = function() {
             if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
-                console.log("Status OK");
             }
             else if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 404) {
             }
