@@ -13,6 +13,9 @@ function load() {
         xhr.onreadystatechange = function() {
             if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
                 console.log(xhr.response);
+                currentIndex = 0;
+                matches = JSON.parse(xhr.response);
+                displayMatches(JSON.parse(xhr.response));
             }
             else if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 404) {
             }
@@ -21,9 +24,41 @@ function load() {
         }
         xhr.send(JSON.stringify(formData));
     }
+
+    function displayMatches(matches) {
+        displayModal();
+        populateModal(matches[currentIndex]);
+    }
+
+    function displayModal() {
+        modalView.style.zIndex = '1';
+        modalView.style.visibility = 'visible';
+    }
+
+    function hideModal() {
+        modalView.style.zIndex = '-1';
+        modalView.style.visibility = 'hidden';
+    }
+
+    function populateModal(match) {
+        document.getElementById('slideName').innerHTML = match.name;
+        document.getElementById('inlineName').innerHTML = match.name;
+        document.getElementById('inlinePercent').innerHTML = match.matchPercent;
+        document.getElementById('profileImg').src = match.photo;
+    }
+
+    function loadImgPreview() {
+        preview.src = pictureInput.value.trim();
+    }
     
+    var modalView = document.getElementById('modalView');
+    var modal = document.getElementById('modal');
+    var modalExitBut = document.getElementById('modalExit');
+    var leftBut = document.getElementById('leftButton');
+    var rightBut = document.getElementById('rightButton');
     var nameInput = document.getElementById('name');
     var pictureInput = document.getElementById('picture');
+    var preview = document.getElementById('preview');
     var submitButton = document.getElementById('surveySubmit');
     var dropDowns = document.getElementsByClassName('dropDown');
     var formData = {
@@ -31,6 +66,8 @@ function load() {
         photo: '',
         scores: []
     }
+    var matches;
+    var currentIndex = 0;
     
     
     submitButton.addEventListener('click', function(e) {
@@ -53,4 +90,24 @@ function load() {
         }
         sendFormData();
     }, false);
+
+    pictureInput.addEventListener('blur', function() {
+        loadImgPreview();
+    });
+
+    leftBut.addEventListener('click', function() {
+        currentIndex--;
+        if (currentIndex < 0) currentIndex = 0;
+        else populateModal(matches[currentIndex]);
+    });
+
+    rightBut.addEventListener('click', function() {
+        currentIndex++;
+        if (currentIndex >= matches.length) currentIndex = matches.length - 1;
+        else populateModal(matches[currentIndex]);
+    });
+
+    modalExitBut.addEventListener('click', function() {
+        hideModal();
+    })
 }

@@ -14,13 +14,15 @@
         <h1>Friend Finder Survey Questions</h1>
         <form>
             <h2>About Me</h2>
-            <label for="name">Name *</label>
+            <label for="name">Name</label>
             <br>
             <input id="name" type="text" placeholder="Full Name">
             <br>
             <label for="picture">My Picture - URL link to a picture of you (Picture must contain your face)</label>
             <br>
             <input id="picture" type="text" placeholder="http://">
+            <br>
+            <img id="preview" src="#" alt="Image Preview">
             <h2>Compatibility Survey</h2>
             <div class="question">
                 <label for="q1">
@@ -164,7 +166,25 @@
             </div>
             <input id="surveySubmit" type="submit" value="SUBMIT">
         </form>
-
+    </div>
+    <div id="modalView">
+        <div id="modal">
+            <div id="modalExit">&times;</div>
+            <h1 id="modalHeader">Your Matches</h1>
+            <div id="leftButton">
+                &lt;
+            </div>
+            <div id="rightButton">
+                &gt;
+            </div>
+            <div id="slideWrapper">
+                <p id="slideName"></p>
+                <p id="slidePercent">
+                    You and <span id="inlineName"></span> are a <span id="inlinePercent"></span>% match!
+                </p>
+                <img id="profileImg" src="#" alt="Profile Picture">
+            </div>
+        </div>
     </div>
     <script type="text/javascript" src="js/survey.js"></script>
 </body>
