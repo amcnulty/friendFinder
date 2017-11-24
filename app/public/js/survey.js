@@ -12,7 +12,6 @@ function load() {
         xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
         xhr.onreadystatechange = function() {
             if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
-                console.log(xhr.response);
                 currentIndex = 0;
                 matches = JSON.parse(xhr.response);
                 displayMatches(JSON.parse(xhr.response));
