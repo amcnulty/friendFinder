@@ -125,7 +125,8 @@ input:not([type=submit]) {
 }
 
 #profileImg {
-    width: 80%;
+    max-width: 80%;
+    max-height: 70%;
 }
 
 #modalExit {
@@ -146,4 +147,35 @@ input:not([type=submit]) {
 
 #modalExit:hover {
     background-color: red;
+}
+
+#slideName {
+    font-size: 2em;
+    margin: 5px 0px 5px 0px;
+}
+
+#slidePercent {
+    font-size: 3em;
+    color: limegreen;
+    font-weight: bold;
+    margin: 5px 0px 5px 0px;
+}
+
+@media screen and (max-width: 980px) {
+    #modal {
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    #modal {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    #modal {
+        width: 250px;
+        top: 20px;
+    }
 }

@@ -42,7 +42,6 @@ function load() {
 
     function populateModal(match) {
         document.getElementById('slideName').innerHTML = match.name;
-        document.getElementById('inlineName').innerHTML = match.name;
         document.getElementById('inlinePercent').innerHTML = match.matchPercent;
         document.getElementById('profileImg').src = match.photo;
     }
